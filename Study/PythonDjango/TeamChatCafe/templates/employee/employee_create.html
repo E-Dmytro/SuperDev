@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+
+{#{% block title %}#}
+{##}
+{#<title>{{ title }}</title>#}
+{##}
+{#{% endblock title%}#}
+{##}
+{% block header %}
+
+<br><h1 style="text-indent:25px;" > Зареєструвати автора </h1>
+</br>
+
+{% endblock header %}
+
+{% block content %}
+
+ <form action="" method="post" autocomplete="off" style="text-indent:25px;">
+    {% csrf_token %}
+    <!-- {{ form|crispy }} -->
+    {{ form.name|as_crispy_field }}
+    {{ form.surname|as_crispy_field }}
+    {{ form.patronymic|as_crispy_field }}
+
+   <br> <button type="Submit" class="btn btn-success" style="margin-left: 25px">
+     <i class="fas fa-user-check" ></i> Submit</button></br>
+ </form>
+</style>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+
+<title>{{ title }}</title>
+
+{% endblock title%}
+
+{% block header %}
+
+<h1> {{header}} </h1>
+
+{% endblock header %}
+
+{% block content %}
+<style>
+
+table {
+   margin-top: 3%;
+  background-color: rgba(219, 229, 218, 0.38);
+  border-spacing: 1em .5em;
+  padding: 25% 50px 50px 50px;
+  border: 5px solid #ffffff;
+}
+ th, td {
+    border-spacing: 5px;
+  border: 2px solid rgba(145, 201, 149, 0.42);
+     display: table-cell;
+  vertical-align: middle;
+    text-align: center;
+}
+</style>
+
+
+<br><table class="table">
+  <thead class="thead-dark">
+        <tr>
+           <th scope="col">First Name</th>
+            <th scope="col">Middle Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Password</th>
+            <th scope="col">Update at</th>
+            <th scope="col">Create at</th>
+            <th scope="col">Edit</th>
+{#            <td>#}
+{#                <a href="{% url 'user_insert' %}" class="btn btn-outline-success">#}
+{#                    <i class="fas fa-user-friends"></i> Add New#}
+{#                </a>#}
+{#            </td>#}
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in user_list %}
+            <tr>
+                <td>{{user.first_name}}</td>
+                <td>{{user.middle_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.updated_at}}</td>
+                <td>{{user.created_at}}</td>
+                <td>
+                    <a href="{% url 'user_update' user.id %}" class="btn text-secondary px-8">
+                        <i class="fa fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'user_delete' user.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="Submit" class="btn">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table></br>
+
+    <td>
+        <a href="{% url 'user_insert' %}" class="btn btn-outline-success" id = 'foo'>
+                    <i class="fas fa-user-friends"></i> Add New
+        </a>
+    </td>
+<style>
+  #foo {
+    position: fixed;
+    bottom: 85%;
+    right: 1%;
+  }
+</style>
+{% endblock %}

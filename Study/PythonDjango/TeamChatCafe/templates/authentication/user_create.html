@@ -1,0 +1,35 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+
+{#{% block title %}#}
+{##}
+{#<title>{{ title }}</title>#}
+{##}
+{#{% endblock title%}#}
+{##}
+{% block header %}
+
+<br><h1 style="text-indent:25px;" > Зареєструвати читача </h1>
+</br>
+
+{% endblock header %}
+
+{% block content %}
+<br>
+ <form action="" method="post" autocomplete="off" style="text-indent:25px;">
+    {% csrf_token %}
+    <!-- {{ form|crispy }} -->
+    {{ form.first_name|as_crispy_field }}
+    {{ form.middle_name|as_crispy_field }}
+    {{ form.last_name|as_crispy_field }}
+    {{ form.email|as_crispy_field }}
+    {{ form.password|as_crispy_field }}
+{#    {{ form.update_at|as_crispy_field }}#}
+{#    {{ form.create_at|as_crispy_field }}#}
+
+   <br> <button type="Submit" class="btn btn-success" style="margin-left: 25px">
+     <i class="fas fa-user-check" ></i> Submit</button></br>
+ </form></br>
+</style>
+{% endblock %}

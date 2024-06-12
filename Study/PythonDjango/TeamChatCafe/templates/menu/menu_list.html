@@ -1,0 +1,42 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+       
+<title>{{ title }}</title>
+
+{% endblock title%}
+
+{% block header %}
+
+<h1> {{header}} </h1>
+
+{% endblock header %}
+
+{% block content %}
+
+<div align = 'center'>
+    <div >
+		<h1>{{content_title}}</h1>
+	</div>
+</div>
+
+
+
+{% for menu in books %}
+<div class="card">
+  <h5 class="card-header">{{menu.name}}</h5>
+  <div class="card-body">
+    <h5 class="card-title"> {{menu.all_authors_string}} </h5>
+    <p class="card-text">{{menu.description}}</p>
+    <a href="{% url 'book_update' menu.id %}" class="btn btn-primary">Деталі</a>
+  </div>
+</div>
+{% endfor %}
+
+
+<br>
+<a href="{% url 'index' %}">Back</a>
+
+
+{% endblock %}

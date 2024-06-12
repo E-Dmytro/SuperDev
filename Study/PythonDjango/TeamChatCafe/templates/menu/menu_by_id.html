@@ -1,0 +1,43 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+       
+<title>{{ title }}</title>
+
+{% endblock title%}
+
+{% block header %}
+
+<h1> {{header}} </h1>
+
+{% endblock header %}
+
+{% block content %}
+
+<div align = 'center'>
+    <div >
+		<h1>{{content_title}}</h1>
+	</div>
+</div>
+
+<form action="" method="post" autocomplete="off">
+{% csrf_token %}
+<!-- {{ form|crispy }} -->
+
+{{form.name|as_crispy_field}}
+{{form.description|as_crispy_field}}
+{{form.count|as_crispy_field}}
+{{form.authors|as_crispy_field}}
+<button type="Submit" class="btn btn-sucsess"><i class="fas fa-database"></i> Зберегти</button>
+</form>
+
+
+
+  <div>
+
+    <a href="{% url 'book_list' %}" class="btn btn-primary">Назад</a>
+  </div>
+
+
+{% endblock %}

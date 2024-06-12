@@ -1,0 +1,11 @@
+[{
+    "full_name": "Student 1 from second Group",
+    "avg_rank": 98,
+    "courses": ["Python"]
+},
+{
+    "full_name": "Student 2 from second Group",
+    "avg_rank": 70.34,
+    "courses": ["Ruby", "Python", "Frontend development"]
+}
+]

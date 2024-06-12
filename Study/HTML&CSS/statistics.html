@@ -1,0 +1,58 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<div align = 'center'>
+
+    <div align = 'center'>
+      <div >
+        <h1>{{content_title}}</h1>
+      </div>
+    </div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Статистичний Вимір</th>
+            <th scope="col">Кількість</th>
+            <th scope="col">Дата останньої зміни</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Читачі: всього</td>
+            <td>1655</td>
+            <td>23-03-2022</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Читачі: боржники</td>
+            <td>27</td>
+            <td>20-03-2022</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td >Книги: всього</td>
+            <td>8499</td>
+            <td>01-01-2022</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td >Книги: видано читачам</td>
+            <td>741</td>
+            <td>23-03-2022</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td >Книги: прострочено повернення</td>
+            <td>43</td>
+            <td>23-03-2022</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
+<br>
+<a href="{% url 'index' %}">Back</a>
+{% endblock content %}

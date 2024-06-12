@@ -1,0 +1,67 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+       
+<title>{{ title }}</title>
+
+{% endblock title%}
+
+{% block header %}
+
+<h1> {{header}} </h1>
+
+{% endblock header %}
+
+{% block content %}
+
+<div align = 'center'>
+    <div >
+		<h1>{{content_title}}</h1>
+	</div>
+</div>
+<form action="{% url 'order' %}" method="get">
+	<fieldset>
+		<legend>Ordering</legend>
+		<div>
+			by end_at:
+			<input type="radio" id="end_at_Choice1"
+				name="end_at" value="asc" {% if orders_by.end_at == 'asc' %} checked {% endif %} >
+			<label for="end_at_Choice1">ASC</label>
+		
+			<input type="radio" id="end_at_Choice2"
+				name="end_at" value="desc" {% if orders_by.end_at == 'desc' %} checked {% endif %} >
+			<label for="end_at_Choice2">DESC</label>
+		</div>
+		<div>
+			by plated_end_at:
+			<input type="radio" id="plated_end_at_Choice1"
+				name="plated_end_at" value="asc" {% if orders_by.plated_end_at == 'asc' %} checked {% endif %} >
+			<label for="plated_end_at_Choice1">ASC</label>
+		
+			<input type="radio" id="plated_end_at_Choice2"
+				name="plated_end_at" value="desc" {% if orders_by.plated_end_at == 'desc' %} checked {% endif %} >
+			<label for="plated_end_at_Choice2">DESC</label>
+		</div>
+	</fieldset>	
+	<div>
+	  <button  class="btn btn-primary" type="submit">Reload</button>
+	</div>
+	<br>
+</form>
+
+
+    <div class="list-group"  align = 'left'>
+        {% for order in orders %}
+
+        <button onclick="window.location.href='{% url 'order_update' menu.id %}'"  type="button" class="list-group-item list-group-item-action"  width = '200'>  №{{ order.id }} від {{ order.created_at }}. <br> 
+            Книга "{{ order.menu.name }}", видана {{ order.user.surname_initials }}</button>
+			<button onclick="window.location.href='{% url 'order_delete' menu.id %}'"  type="button" class="btn btn-primary">Вилучити</button>
+		{% endfor %}
+    </div>
+    
+
+<br>
+<a href="{% url 'index' %}">Back</a>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<div align = 'center'>
+  <div >
+    <h1>{{content_title}}</h1>
+  </div>
+</div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Документ</th>
+        <th scope="col">Дата видання</th>
+        <th scope="col">Автор</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Внутрішній трудовий розпорядок бібліотекаря.</td>
+        <td>11-10-2020</td>
+        <td>Мірило М.Т.</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Правила інвентаризації.</td>
+        <td>06-04-2019</td>
+        <td>Петренко В.І.</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Правила поводження читачів з виданими книгами.</td>
+        <td>20-01-2013</td>
+        <td>Нечипоренко О.М.</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Правила зберігання книг в архіві</td>
+        <td>25-08-2011</td>
+        <td>Нечипоренко О.М.</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <a href="{% url 'index' %}">Back</a>
+{% endblock content %}

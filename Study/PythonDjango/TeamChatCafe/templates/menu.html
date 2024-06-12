@@ -1,0 +1,99 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<div align = 'center'>
+  <div >
+    <h1>{{content_title}}</h1>
+  </div>
+</div>
+<h1> Main Dish </h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Dish</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Borsch</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Pizza</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Spaghetti</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Salade</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h1> Dessert </h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Dessert</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Trifle</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Cheescake</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Pie</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Donats</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h1> Water </h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Drinks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Coke</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Sprite</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Wine</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Fanta</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Juice</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <a href="{% url 'index' %}">Back</a>
+{% endblock content %}

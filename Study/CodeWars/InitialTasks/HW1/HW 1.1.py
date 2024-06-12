@@ -1,0 +1,7 @@
+print("Hello! Please answer a few questions:")
+person_name = input("\n What is your name? - ")
+person_age = input ("How old are you? - ")
+person_place = input ("Where do you live - ")
+print(f"Hello, {person_name}")
+print(f"Your age is {person_age}")
+print( f"You live in {person_place}")

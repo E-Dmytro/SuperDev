@@ -1,0 +1,34 @@
+{% extends '_base.html' %}
+
+
+{% block title %}
+       
+<title>{{ title }}</title>
+
+{% endblock title%}
+
+{% block header %}
+
+<h1> {{header}} </h1>
+
+{% endblock header %}
+
+{% block content %}
+
+<div align = 'center'>
+    <div >
+		<h1>{{content_title}}</h1>
+	</div>
+</div>
+
+
+<div class="list-group"  align = 'left'>
+	{% for user in users %}
+	<button type="button" class="list-group-item list-group-item-action"  width = '200'>  {{ user.surname_initials }}</button>
+	{% endfor %}
+</div>
+<br>
+<a href="{% url 'index' %}">Back</a>
+
+
+{% endblock %}
